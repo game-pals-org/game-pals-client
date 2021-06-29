@@ -12,7 +12,7 @@ export class AnnouncementService {
   };
 
   public getAnnouncements(): Observable<Announcement[]> {
-    return this.http.get<Announcement[]>('');
+    return this.http.get<Announcement[]>('https://gamepals.herokuapp.com/announcement');
   }
 
 }
