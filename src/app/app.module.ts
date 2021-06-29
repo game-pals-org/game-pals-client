@@ -7,6 +7,7 @@ import { HomeComponent } from './components/home/home.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { AddAnnouncementComponent } from './components/add-announcement/add-announcement.component';
 import { HttpClientModule } from "@angular/common/http";
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 
@@ -20,7 +21,8 @@ import { HttpClientModule } from "@angular/common/http";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

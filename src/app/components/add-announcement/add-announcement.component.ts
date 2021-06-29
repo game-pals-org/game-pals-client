@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {FormControl, FormGroup} from "@angular/forms";
+import {AnnouncementService} from "../../service/announcement.service";
 
 @Component({
   selector: 'app-add-announcement',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddAnnouncementComponent implements OnInit {
 
-  constructor() { }
+  public announcementForm = new FormGroup({
+    gameName: new FormControl(''),
+    additionalInfo: new FormControl(''),
+    nick: new FormControl(''),
+    discordName: new FormControl(''),
+  });
+
+  constructor(private announcementsService: AnnouncementService) { }
 
   ngOnInit(): void {
+  }
+
+  public onSelect(): void {
+    const gameName = this.announcementForm.value.gameName;
+    const additionalInfo = this.announcementForm.value.additionalInfo;
+    const nick = this.announcementForm.value.nick;
+    const discordName = this.announcementForm.value.discordName;
+    this.announcementsService.postAnnouncement(gameName, additionalInfo, nick, discordName);
   }
 
 }

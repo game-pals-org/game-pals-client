@@ -15,4 +15,8 @@ export class AnnouncementService {
     return this.http.get<Announcement[]>('https://gamepals.herokuapp.com/announcement');
   }
 
+  public postAnnouncement(gameName: string, additionalInfo: string, nick: string, discordName: string): void{
+    this.http.post<Announcement>('https://gamepals.herokuapp.com/announcement', { id: 0, nick: nick, gameName: gameName, discordName: discordName, additionalInfo: additionalInfo });
+  }
+
 }
