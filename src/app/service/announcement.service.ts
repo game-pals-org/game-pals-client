@@ -17,7 +17,7 @@ export class AnnouncementService {
 
   public postAnnouncement(gameName: string, additionalInfo: string, nick: string, discordName: string, isRanked: boolean): void{
     const headers = { 'content-type': 'application/json'};
-    const body = JSON.stringify({ id: 0, nick: nick, gameName: gameName, discordName: discordName, additionalInfo: additionalInfo, isRanked: isRanked, date: new Date()});
+    const body = JSON.stringify({ id: 0, nick: nick, gameName: gameName, discordName: discordName, additionalInfo: additionalInfo, ranked: isRanked, date: new Date()});
     const result = this.http.post('https://gamepals.herokuapp.com/announcement', body, {'headers':headers});
     result.subscribe(data => {console.log(data)});
   }

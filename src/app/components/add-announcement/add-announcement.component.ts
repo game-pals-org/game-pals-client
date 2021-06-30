@@ -14,7 +14,7 @@ export class AddAnnouncementComponent implements OnInit {
     additionalInfo: new FormControl(''),
     nick: new FormControl(''),
     discordName: new FormControl(''),
-    isRanked: new FormControl('')
+    ranked: new FormControl('')
   });
 
   constructor(private announcementsService: AnnouncementService) { }
