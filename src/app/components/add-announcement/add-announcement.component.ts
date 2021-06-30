@@ -31,6 +31,7 @@ export class AddAnnouncementComponent implements OnInit {
     if (this.announcementForm.value.isRanked === "ranked") {
       isRanked = true;
     }
+    this.announcementForm.reset();
     this.announcementsService.postAnnouncement(gameName, additionalInfo, nick, discordName, isRanked);
   }
 
