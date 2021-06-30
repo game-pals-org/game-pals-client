@@ -4,4 +4,6 @@ export interface Announcement{
   gameName: string;
   discordName: string;
   additionalInfo: string;
+  ranked: boolean;
+  date: String;
 }
