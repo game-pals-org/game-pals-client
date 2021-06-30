@@ -28,7 +28,7 @@ export class AddAnnouncementComponent implements OnInit {
     const nick = this.announcementForm.value.nick;
     const discordName = this.announcementForm.value.discordName;
     let isRanked = false;
-    if (this.announcementForm.value.isRanked === "ranked") {
+    if (this.announcementForm.value.ranked == 'ranked') {
       isRanked = true;
     }
     this.announcementForm.reset();

@@ -2,15 +2,15 @@
 <div class="container">
   <h1>SORT BY:</h1>
   <div class="btn-group" role="group" aria-label="Basic outlined example">
-    <button type="button" class="btn btn-outline-primary" (click)="getAnnouncementsByGameNameAsc()">Game Name A-Z</button>
-    <button type="button" class="btn btn-outline-primary" (click)="getAnnouncementsByGameNameDsc()">Game Name Z-A</button>
-    <button type="button" class="btn btn-outline-primary" (click)="getAnnouncementsByDateAsc()">Date Ascending</button>
-    <button type="button" class="btn btn-outline-primary" (click)="getAnnouncementsByDateDsc()">Date Descending</button>
-    <button type="button" class="btn btn-outline-primary" (click)="getRankedAnnouncements()">Ranked</button>
-    <button type="button" class="btn btn-outline-primary" (click)="getCasualAnnouncements()">Casual</button>
+    <button type="button" class="btn btn-outline-light" (click)="getAnnouncementsByGameNameAsc()">Game Name A-Z</button>
+    <button type="button" class="btn btn-outline-light" (click)="getAnnouncementsByGameNameDsc()">Game Name Z-A</button>
+    <button type="button" class="btn btn-outline-light" (click)="getAnnouncementsByDateAsc()">Date Ascending</button>
+    <button type="button" class="btn btn-outline-light" (click)="getAnnouncementsByDateDsc()">Date Descending</button>
+    <button type="button" class="btn btn-outline-light" (click)="getRankedAnnouncements()">Ranked</button>
+    <button type="button" class="btn btn-outline-light" (click)="getCasualAnnouncements()">Casual</button>
   </div>
 
-  <div *ngFor="let announcement of announcements">
+  <div *ngFor="let announcement of announcements" class="mt-2">
     <div class="card mb-2">
       <div class="card-body">
         <h6 class="blockquote-footer card-subtitle display-5">{{ announcement.date.substr(0, 10) }} {{ announcement.date.substr(11, 5) }}</h6>
@@ -18,7 +18,7 @@
           <span *ngIf="announcement.ranked; else elseBlock" class="badge rounded-pill bg-dark">Ranked</span>
           <ng-template #elseBlock><span class="badge rounded-pill bg-secondary">Casual</span></ng-template>
         </h5>
-        <h6 class="card-text mb-2 text-muted">Info: {{ announcement.additionalInfo }}</h6>
+        <h6 class="card-text mb-2">Info: {{ announcement.additionalInfo }}</h6>
         <p class="card-subtitle">In game nick: {{ announcement.nick }}</p>
         <p class="card-subtitle">Discord nick: {{ announcement.discordName }}</p>
       </div>
