@@ -6,6 +6,19 @@
     <label for="announcement-info">Additional info: </label>
     <input id="announcement-info" class="form-control mb-1" type="text" placeholder="Announcement Info" aria-label=".form-control-sm example" formControlName="additionalInfo">
 
+    <div class="form-check">
+      <input class="form-check-input" value="ranked" type="radio" id="ranked" formControlName="isRanked">
+      <label class="form-check-label" for="ranked">
+        Ranked Game
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" value="casual" type="radio" id="casual" formControlName="isRanked" checked>
+      <label class="form-check-label" for="casual">
+        Casual Game
+      </label>
+    </div>
+
     <label for="nick">In game nick: </label>
     <input id="nick" class="form-control mb-1" type="text" placeholder="Nick" aria-label=".form-control-lg example" formControlName="nick">
 

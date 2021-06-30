@@ -14,6 +14,7 @@ export class AddAnnouncementComponent implements OnInit {
     additionalInfo: new FormControl(''),
     nick: new FormControl(''),
     discordName: new FormControl(''),
+    isRanked: new FormControl('')
   });
 
   constructor(private announcementsService: AnnouncementService) { }
@@ -26,7 +27,11 @@ export class AddAnnouncementComponent implements OnInit {
     const additionalInfo = this.announcementForm.value.additionalInfo;
     const nick = this.announcementForm.value.nick;
     const discordName = this.announcementForm.value.discordName;
-    this.announcementsService.postAnnouncement(gameName, additionalInfo, nick, discordName);
+    let isRanked = false;
+    if (this.announcementForm.value.isRanked === "ranked") {
+      isRanked = true;
+    }
+    this.announcementsService.postAnnouncement(gameName, additionalInfo, nick, discordName, isRanked);
   }
 
 }
