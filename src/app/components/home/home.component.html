@@ -1,10 +1,12 @@
-<div *ngFor="let announcement of announcements">
-  <div class="card mb-1">
-    <div class="card-body">
-      <h5 class="card-title">Game: {{ announcement.gameName }}</h5>
-      <h6 class="card-text mb-2 text-muted">Info: {{ announcement.additionalInfo }}</h6>
-      <p class="card-subtitle">In game nick: {{ announcement.nick }}</p>
-      <p class="card-subtitle">Discord nick: {{ announcement.discordName }}</p>
+<div class="container">
+  <div *ngFor="let announcement of announcements">
+    <div class="card mb-2">
+      <div class="card-body">
+        <h5 class="card-title">Game: {{ announcement.gameName }}</h5>
+        <h6 class="card-text mb-2 text-muted">Info: {{ announcement.additionalInfo }}</h6>
+        <p class="card-subtitle">In game nick: {{ announcement.nick }}</p>
+        <p class="card-subtitle">Discord nick: {{ announcement.discordName }}</p>
+      </div>
     </div>
   </div>
 </div>
