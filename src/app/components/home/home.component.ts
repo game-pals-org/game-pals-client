@@ -9,6 +9,7 @@ import {AnnouncementService} from "../../service/announcement.service";
 })
 export class HomeComponent implements OnInit {
 
+
   public announcements: Announcement[] = [];
 
   constructor(private announcementsService: AnnouncementService) {
@@ -19,6 +20,55 @@ export class HomeComponent implements OnInit {
     )
 
   }
+
+  public getAnnouncementsByGameNameAsc(): void  {
+    this.announcementsService.getAnnouncementsByGameNameAsc().subscribe(
+      (announcements: Announcement[]) => {
+        this.announcements = announcements;
+      }
+    )
+  }
+
+  public getAnnouncementsByGameNameDsc(): void  {
+    this.announcementsService.getAnnouncementsByGameNameDsc().subscribe(
+      (announcements: Announcement[]) => {
+        this.announcements = announcements;
+      }
+    )
+  }
+
+  public getAnnouncementsByDateDsc(): void  {
+    this.announcementsService.getAnnouncementsByDateDsc().subscribe(
+      (announcements: Announcement[]) => {
+        this.announcements = announcements;
+      }
+    )
+  }
+
+  public getAnnouncementsByDateAsc(): void  {
+    this.announcementsService.getAnnouncementsByDateAsc().subscribe(
+      (announcements: Announcement[]) => {
+        this.announcements = announcements;
+      }
+    )
+  }
+
+  public getRankedAnnouncements(): void  {
+    this.announcementsService.getRankedAnnouncements().subscribe(
+      (announcements: Announcement[]) => {
+        this.announcements = announcements;
+      }
+    )
+  }
+
+  public getCasualAnnouncements(): void  {
+    this.announcementsService.getCasualAnnouncements().subscribe(
+      (announcements: Announcement[]) => {
+        this.announcements = announcements;
+      }
+    )
+  }
+
 
   ngOnInit(): void {
   }

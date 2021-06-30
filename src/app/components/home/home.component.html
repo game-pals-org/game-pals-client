@@ -1,4 +1,15 @@
+
 <div class="container">
+  <h1>SORT BY:</h1>
+  <div class="btn-group" role="group" aria-label="Basic outlined example">
+    <button type="button" class="btn btn-outline-primary" (click)="getAnnouncementsByGameNameAsc()">Game Name A-Z</button>
+    <button type="button" class="btn btn-outline-primary" (click)="getAnnouncementsByGameNameDsc()">Game Name Z-A</button>
+    <button type="button" class="btn btn-outline-primary" (click)="getAnnouncementsByDateAsc()">Date Ascending</button>
+    <button type="button" class="btn btn-outline-primary" (click)="getAnnouncementsByDateDsc()">Date Descending</button>
+    <button type="button" class="btn btn-outline-primary" (click)="getRankedAnnouncements()">Ranked</button>
+    <button type="button" class="btn btn-outline-primary" (click)="getCasualAnnouncements()">Casual</button>
+  </div>
+
   <div *ngFor="let announcement of announcements">
     <div class="card mb-2">
       <div class="card-body">
