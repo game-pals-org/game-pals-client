@@ -1,5 +1,5 @@
 <div class="container">
-  <form [formGroup]="announcementForm" (ngSubmit)="onSelect()">
+  <form [formGroup]="announcementForm" (ngSubmit)="onSelect()" class="position-relative">
     <label for="game-name">Game: </label>
     <input id="game-name" class="form-control mb-1" type="text" placeholder="Game Name" aria-label="default input example" formControlName="gameName">
 
@@ -7,13 +7,13 @@
     <input id="announcement-info" class="form-control mb-1" type="text" placeholder="Announcement Info" aria-label=".form-control-sm example" formControlName="additionalInfo">
 
     <div class="form-check">
-      <input class="form-check-input" value="ranked" type="radio" id="ranked" formControlName="isRanked">
+      <input class="form-check-input" value="ranked" name="isRanked" type="radio" id="ranked" formControlName="isRanked">
       <label class="form-check-label" for="ranked">
         Ranked Game
       </label>
     </div>
     <div class="form-check">
-      <input class="form-check-input" value="casual" type="radio" id="casual" formControlName="isRanked" checked>
+      <input class="form-check-input" value="casual" name="isRanked" type="radio" id="casual" formControlName="isRanked" checked>
       <label class="form-check-label" for="casual">
         Casual Game
       </label>
@@ -25,6 +25,6 @@
     <label for="discord-name">Discord name: </label>
     <input id="discord-name" class="form-control mb-1" type="text" placeholder="Discord Name" aria-label=".form-control-sm example" formControlName="discordName">
 
-    <button class="btn btn-success position-absolute top-50 start-50 translate-middle" type="submit">Add announcement</button>
+    <button class="btn btn-success position-absolute start-50 translate-middle-x" type="submit">Add announcement</button>
   </form>
 </div>

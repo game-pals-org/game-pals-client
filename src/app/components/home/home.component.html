@@ -2,7 +2,11 @@
   <div *ngFor="let announcement of announcements">
     <div class="card mb-2">
       <div class="card-body">
-        <h5 class="card-title">Game: {{ announcement.gameName }}</h5>
+        <h6 class="blockquote-footer card-subtitle display-5">{{ announcement.date.substr(0, 10) }} {{ announcement.date.substr(11, 5) }}</h6>
+        <h5 class="card-title">Game: {{ announcement.gameName }}
+          <span *ngIf="announcement.ranked; else elseBlock" class="badge rounded-pill bg-dark">Ranked</span>
+          <ng-template #elseBlock><span class="badge rounded-pill bg-secondary">Casual</span></ng-template>
+        </h5>
         <h6 class="card-text mb-2 text-muted">Info: {{ announcement.additionalInfo }}</h6>
         <p class="card-subtitle">In game nick: {{ announcement.nick }}</p>
         <p class="card-subtitle">Discord nick: {{ announcement.discordName }}</p>
