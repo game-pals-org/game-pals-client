@@ -22,4 +22,27 @@ export class AnnouncementService {
     result.subscribe(data => {console.log(data)});
   }
 
+  public getAnnouncementsByGameNameAsc(): Observable<Announcement[]> {
+    return this.http.get<Announcement[]>('https://gamepals.herokuapp.com/announcement/gamenameasc');
+  }
+
+  public getAnnouncementsByGameNameDsc(): Observable<Announcement[]> {
+    return this.http.get<Announcement[]>('https://gamepals.herokuapp.com/announcement/gamenamedesc');
+  }
+
+  public getAnnouncementsByDateDsc(): Observable<Announcement[]> {
+    return this.http.get<Announcement[]>('https://gamepals.herokuapp.com/announcement/datedesc');
+  }
+
+  public getAnnouncementsByDateAsc(): Observable<Announcement[]> {
+    return this.http.get<Announcement[]>('https://gamepals.herokuapp.com/announcement/dateasc');
+  }
+
+  public getRankedAnnouncements(): Observable<Announcement[]> {
+    return this.http.get<Announcement[]>('https://gamepals.herokuapp.com/announcement/ranked');
+  }
+
+  public getCasualAnnouncements(): Observable<Announcement[]> {
+    return this.http.get<Announcement[]>('https://gamepals.herokuapp.com/announcement/casual');
+  }
 }
