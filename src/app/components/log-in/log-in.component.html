@@ -1,12 +1,11 @@
 <div class="container">
-    <form [formGroup]="loginForm" (ngSubmit)="onSelect()" class="position-relative">
-  <label for="username">Username: </label>
-  <input id="username" class="form-control mb-1" type="text" placeholder="Username" aria-label="default input example" formControlName="username">
+  <form [formGroup]="loginForm" (ngSubmit)="onSelect()" class="position-relative">
+    <label for="username">Username: </label>
+    <input id="username" class="form-control mb-1" type="text" placeholder="Username" aria-label="default input example" formControlName="username">
 
-  <label for="encodedPassword">Password: </label>
-  <input id="encodedPassword" class="form-control mb-1" type="text" placeholder="Password" aria-label=".form-control-sm example" formControlName="password">
+    <label for="encodedPassword">Password: </label>
+    <input id="encodedPassword" class="form-control mb-1" type="password" placeholder="Password" aria-label=".form-control-sm example" formControlName="password">
 
-  <button class="btn btn-success position-absolute start-50 translate-middle-x" type="submit">Log In</button>
-    </form>
+    <button class="btn btn-success position-absolute start-50 translate-middle-x" type="submit">Log In</button>
+  </form>
 </div>
-<h4>{{message}}</h4>
