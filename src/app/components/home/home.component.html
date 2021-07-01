@@ -8,6 +8,8 @@
     <button type="button" class="btn btn-outline-light" (click)="getAnnouncementsByDateDsc()">Date Descending</button>
     <button type="button" class="btn btn-outline-light" (click)="getRankedAnnouncements()">Ranked</button>
     <button type="button" class="btn btn-outline-light" (click)="getCasualAnnouncements()">Casual</button>
+  </div>
+  <div class="btn-group" role="group" aria-label="Basic outlined example">
     <form [formGroup]="announcementSearch" (ngSubmit)="getAnnouncementsBySearchedGame()" class="d-flex">
       <input class="form-control me-2 mx-2" type="search" placeholder="Search by Game Name" aria-label="Search" formControlName="gameName">
       <button class="btn btn-outline-light" type="submit">Search</button>
