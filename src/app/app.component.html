@@ -14,11 +14,17 @@
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['/', 'add-announcement']">Add Announcement</a>
         </li>
-        <li class="nav-item">
+        <li *ngIf="!(this.loginStateService.isLogged | async)" class="nav-item">
           <a class="nav-link" [routerLink]="['/', 'log-in']">Login</a>
         </li>
-        <li class="nav-item">
+        <li *ngIf="!(this.loginStateService.isLogged | async)" class="nav-item">
           <a class="nav-link" [routerLink]="['/', 'sign-in']">Sign in</a>
+        </li>
+        <li *ngIf="this.loginStateService.isLogged | async" class="nav-item">
+          <a class="nav-link" [routerLink]="['/']">{{ this.loginStateService.username }}</a>
+        </li>
+        <li *ngIf="this.loginStateService.isLogged | async" class="nav-item">
+          <a class="nav-link" [routerLink]="['/']">[Avatar]</a>
         </li>
       </ul>
     </div>

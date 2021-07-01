@@ -25,12 +25,11 @@ export class SignInComponent implements OnInit {
     this.accountService.registerUser(username, password).subscribe(
       (loginRegisterInfo: LoginRegisterInfo) => {
         registerInfo = loginRegisterInfo
+        this.signingInForm.reset();
+
+        this.message = registerInfo.message;
       }
     )
-
-    this.signingInForm.reset();
-
-    this.message = registerInfo.message;
   }
 
   constructor(private accountService: AccountService) { }

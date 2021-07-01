@@ -1,19 +1,20 @@
 import { Injectable } from '@angular/core';
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginStateService {
 
-  private _isLogged: boolean = false;
+  private _isLogged: Observable<boolean> = new Observable<boolean>(o => o.next(false));
   private _username: string = '';
 
 
-  get isLogged(): boolean {
+  get isLogged(): Observable<boolean> {
     return this._isLogged;
   }
 
-  set isLogged(value: boolean) {
+  set isLogged(value: Observable<boolean>) {
     this._isLogged = value;
   }
 

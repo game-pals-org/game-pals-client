@@ -19,7 +19,7 @@ export class AccountService {
     const headers = { 'content-type': 'application/json'};
     const body = JSON.stringify({username: username, password: password});
     const result = this.http.post('https://gamepals.herokuapp.com/account/login', body, {'headers':headers});
-    result.subscribe(data => {console.log(data)});
+    // result.subscribe(data => {console.log(data)});
     return result;
   }
 
@@ -27,7 +27,7 @@ export class AccountService {
     const headers = { 'content-type': 'application/json'};
     const body = JSON.stringify({username: username, password: password});
     const result = this.http.post('https://gamepals.herokuapp.com/account/register', body, {'headers':headers});
-    result.subscribe(data => {console.log(data)});
+    // result.subscribe(data => {console.log(data)});
     return result;
   }
 
