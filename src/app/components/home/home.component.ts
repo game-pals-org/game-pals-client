@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Announcement} from "../../model/announcement.model";
 import {AnnouncementService} from "../../service/announcement.service";
+import {FormControl, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-home',
@@ -8,6 +9,10 @@ import {AnnouncementService} from "../../service/announcement.service";
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+
+  public announcementSearch = new FormGroup({
+    gameName: new FormControl('')
+  });
 
 
   public announcements: Announcement[] = [];
@@ -67,6 +72,18 @@ export class HomeComponent implements OnInit {
         this.announcements = announcements;
       }
     )
+  }
+
+  public getAnnouncementsBySearchedGame(): void  {
+    let name = this.announcementSearch.value.gameName;
+    if (!name.isEmpty) {
+      this.announcementSearch.reset()
+      this.announcementsService.getAnnouncementsBySearchedGame(name).subscribe(
+        (announcements: Announcement[]) => {
+          this.announcements = announcements;
+        }
+      )
+    }
   }
 
 

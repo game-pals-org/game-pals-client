@@ -45,4 +45,8 @@ export class AnnouncementService {
   public getCasualAnnouncements(): Observable<Announcement[]> {
     return this.http.get<Announcement[]>('https://gamepals.herokuapp.com/announcement/casual');
   }
+
+  public getAnnouncementsBySearchedGame(name: string): Observable<Announcement[]> {
+    return this.http.get<Announcement[]>('https://gamepals.herokuapp.com/announcement/' + name);
+  }
 }
