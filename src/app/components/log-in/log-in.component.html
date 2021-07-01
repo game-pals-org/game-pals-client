@@ -1,12 +1,26 @@
 <div class="container">
   <form [formGroup]="loginForm" (ngSubmit)="onSelect()" class="position-relative">
     <label for="username">Username: </label>
-    <input id="username" class="form-control mb-1" type="text" placeholder="Username" aria-label="default input example" formControlName="username">
+    <input id="username" class="form-control mb-1" type="text" placeholder="Username" aria-label="default input example"
+           formControlName="username">
 
     <label for="encodedPassword">Password: </label>
-    <input id="encodedPassword" class="form-control mb-1" type="password" placeholder="Password" aria-label=".form-control-sm example" formControlName="password">
+    <input id="encodedPassword" class="form-control mb-1" type="password" placeholder="Password"
+           aria-label=".form-control-sm example" formControlName="password">
 
-    <button class="btn btn-success position-absolute start-50 translate-middle-x" type="submit">Log In</button>
+      <button class="btn btn-success position-absolute start-50 translate-middle-x" id="loginBtn" type="submit"
+              data-bs-toggle="collapse" data-bs-target="#collapseInfo" aria-expanded="false"
+              aria-controls="collapseInfo">Log In
+      </button>
+
+    <div class="collapse position-absolute start-0" id="collapseInfo">
+      <div class="card card-body">
+        {{message}}
+      </div>
+    </div>
+
   </form>
 </div>
-<h6>{{message}}</h6>
+
+
+
