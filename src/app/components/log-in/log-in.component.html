@@ -1,4 +1,10 @@
+<div class="collapse position-absolute start-50 translate-middle-x" id="collapseInfo">
+  <div class="card card-body">
+    {{message}}
+  </div>
+</div>
 <div class="container">
+  <h1>Log in</h1>
   <form [formGroup]="loginForm" (ngSubmit)="onSelect()" class="position-relative">
     <label for="username">Username: </label>
     <input id="username" class="form-control mb-1" type="text" placeholder="Username" aria-label="default input example"
@@ -12,13 +18,6 @@
               data-bs-toggle="collapse" data-bs-target="#collapseInfo" aria-expanded="false"
               aria-controls="collapseInfo">Log In
       </button>
-
-    <div class="collapse position-absolute start-0" id="collapseInfo">
-      <div class="card card-body">
-        {{message}}
-      </div>
-    </div>
-
   </form>
 </div>
 
