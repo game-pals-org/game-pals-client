@@ -17,18 +17,12 @@ export class AccountService {
 
   public loginUser (username: string, password: string): Observable<any> {
     const headers = { 'content-type': 'application/json'};
-    const body = JSON.stringify({username: username, password: password});
-    const result = this.http.post('https://gamepals.herokuapp.com/account/login', body, {'headers':headers});
-    // result.subscribe(data => {console.log(data)});
-    return result;
+    return this.http.post('https://gamepals.herokuapp.com/account/login',  JSON.stringify({username: username, password: password}), {'headers':headers});
   }
 
   public registerUser (username: string, password: string): Observable<any> {
     const headers = { 'content-type': 'application/json'};
-    const body = JSON.stringify({username: username, password: password});
-    const result = this.http.post('https://gamepals.herokuapp.com/account/register', body, {'headers':headers});
-    // result.subscribe(data => {console.log(data)});
-    return result;
+    return this.http.post('https://gamepals.herokuapp.com/account/register', JSON.stringify({username: username, password: password}), {'headers':headers});
   }
 
 

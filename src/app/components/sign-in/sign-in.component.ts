@@ -20,9 +20,8 @@ export class SignInComponent implements OnInit {
 
   public onSelect () {
     const username = this.signingInForm.value.username;
-    const password = this.signingInForm.value.password;
     let registerInfo: LoginRegisterInfo = {success: false, username: '', message: ''};
-    this.accountService.registerUser(username, password).subscribe(
+    this.accountService.registerUser(username, this.signingInForm.value.password).subscribe(
       (loginRegisterInfo: LoginRegisterInfo) => {
         registerInfo = loginRegisterInfo
         this.signingInForm.reset();

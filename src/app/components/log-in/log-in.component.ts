@@ -21,9 +21,8 @@ export class LogInComponent implements OnInit {
 
   public onSelect () {
     const username = this.loginForm.value.username;
-    const password = this.loginForm.value.password;
     let loginInfo: LoginRegisterInfo = {success: false, username: '', message: ''};
-    this.accountService.loginUser(username, password).subscribe(
+    this.accountService.loginUser(username, this.loginForm.value.password).subscribe(
       (loginRegisterInfo: LoginRegisterInfo) => {
         loginInfo = loginRegisterInfo;
         this.loginForm.reset();
