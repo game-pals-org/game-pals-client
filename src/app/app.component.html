@@ -21,7 +21,7 @@
           <a class="nav-link" [routerLink]="['/', 'sign-in']">Sign in</a>
         </li>
         <li *ngIf="this.loginStateService.isLogged | async" class="nav-item">
-          <a class="nav-link" [routerLink]="['/']">{{ this.loginStateService.username }}</a>
+          <a class="nav-link" [routerLink]="['/', 'user-profile']">{{ this.loginStateService.username }}</a>
         </li>
         <li *ngIf="this.loginStateService.isLogged | async" class="nav-item">
           <a class="nav-brand" [routerLink]="['/']">

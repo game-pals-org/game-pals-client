@@ -11,6 +11,7 @@ import {Router} from "@angular/router";
 export class AddAnnouncementComponent implements OnInit {
 
   public announcementForm = new FormGroup({
+    user: new FormControl(''),
     gameName: new FormControl('', Validators.required),
     additionalInfo: new FormControl(''),
     nick: new FormControl('', Validators.required),
@@ -25,6 +26,7 @@ export class AddAnnouncementComponent implements OnInit {
   }
 
   public onSelect(): void {
+    const user = this.announcementForm.value.user;
     const gameName = this.announcementForm.value.gameName;
     const additionalInfo = this.announcementForm.value.additionalInfo;
     const nick = this.announcementForm.value.nick;
@@ -34,7 +36,7 @@ export class AddAnnouncementComponent implements OnInit {
       isRanked = true;
     }
     this.announcementForm.reset();
-    this.announcementsService.postAnnouncement(gameName, additionalInfo, nick, discordName, isRanked);
+    this.announcementsService.postAnnouncement(user, gameName, additionalInfo, nick, discordName, isRanked);
     this.router.navigate(['/'])
   }
 

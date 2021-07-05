@@ -1,0 +1,25 @@
+label, h1{
+  color: white;
+}
+#profile {
+  width: 500px;
+  height: 150px;
+  margin: 0 auto;
+}
+#logo {
+  float: left;
+}
+#username{
+  float: left;
+
+}
+
+#show-announcement{
+  float: left;
+}
+
+#announcement {
+  width: 400px;
+  margin: 0 auto;
+}
+
