@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup} from "@angular/forms";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {AnnouncementService} from "../../service/announcement.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-add-announcement',
@@ -10,14 +11,15 @@ import {AnnouncementService} from "../../service/announcement.service";
 export class AddAnnouncementComponent implements OnInit {
 
   public announcementForm = new FormGroup({
-    gameName: new FormControl(''),
+    gameName: new FormControl('', Validators.required),
     additionalInfo: new FormControl(''),
-    nick: new FormControl(''),
-    discordName: new FormControl(''),
+    nick: new FormControl('', Validators.required),
+    discordName: new FormControl('', Validators.required),
     ranked: new FormControl('')
   });
 
-  constructor(private announcementsService: AnnouncementService) { }
+  constructor(private announcementsService: AnnouncementService,
+              private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -33,6 +35,7 @@ export class AddAnnouncementComponent implements OnInit {
     }
     this.announcementForm.reset();
     this.announcementsService.postAnnouncement(gameName, additionalInfo, nick, discordName, isRanked);
+    this.router.navigate(['/'])
   }
 
 }

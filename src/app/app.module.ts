@@ -20,7 +20,7 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
     PageNotFoundComponent,
     AddAnnouncementComponent,
     LogInComponent,
-    SignInComponent,
+    SignInComponent
   ],
   imports: [
     BrowserModule,

@@ -25,6 +25,6 @@
     <label for="discord-name">Discord name: </label>
     <input id="discord-name" class="form-control mb-1" type="text" placeholder="Discord Name" aria-label=".form-control-sm example" formControlName="discordName">
 
-    <button class="btn btn-success position-absolute start-50 translate-middle-x" type="submit">Add announcement</button>
+    <button class="btn btn-success position-absolute start-50 translate-middle-x" type="submit" [disabled]="!announcementForm.valid">Add announcement</button>
   </form>
 </div>
