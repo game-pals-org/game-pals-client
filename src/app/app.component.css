@@ -4,3 +4,8 @@ nav {
   top: 0px;
   width: 100%;
 }
+
+#avatar{
+  background-color: white;
+  border-radius: 20px;
+}
