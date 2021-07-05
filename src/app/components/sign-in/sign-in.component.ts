@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup} from "@angular/forms";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {LoginRegisterInfo} from "../../model/login-register-info.model";
 import {AccountService} from "../../service/account.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-sign-in',
@@ -14,8 +15,8 @@ export class SignInComponent implements OnInit {
   public message: string = '';
 
   public signingInForm = new FormGroup({
-    username: new FormControl(''),
-    password: new FormControl('')
+    username: new FormControl('', Validators.required),
+    password: new FormControl('', Validators.required)
   })
 
   public onSelect () {
@@ -23,15 +24,20 @@ export class SignInComponent implements OnInit {
     let registerInfo: LoginRegisterInfo = {success: false, username: '', message: ''};
     this.accountService.registerUser(username, this.signingInForm.value.password).subscribe(
       (loginRegisterInfo: LoginRegisterInfo) => {
-        registerInfo = loginRegisterInfo
+        registerInfo = loginRegisterInfo;
         this.signingInForm.reset();
 
         this.message = registerInfo.message;
+
+        if(registerInfo.success){
+          this.router.navigate(['/', 'log-in']);
+        }
       }
     )
   }
 
-  constructor(private accountService: AccountService) { }
+  constructor(private accountService: AccountService,
+              private router: Router) { }
 
   ngOnInit(): void {
   }

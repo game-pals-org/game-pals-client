@@ -16,7 +16,7 @@
 
     <button class="btn btn-success position-absolute start-50 translate-middle-x" type="submit"
             data-bs-toggle="collapse" data-bs-target="#collapseInfo" aria-expanded="false"
-            aria-controls="collapseInfo">Sign In
+            aria-controls="collapseInfo" [disabled]="!signingInForm.valid">Sign In
     </button>
   </form>
 </div>

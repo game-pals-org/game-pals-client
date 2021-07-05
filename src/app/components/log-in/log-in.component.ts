@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {LoginStateService} from "../../service/login-state.service";
-import {FormControl, FormGroup} from "@angular/forms";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {AccountService} from "../../service/account.service";
 import {LoginRegisterInfo} from "../../model/login-register-info.model";
 import {Observable} from "rxjs";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-log-in',
@@ -15,8 +16,8 @@ export class LogInComponent implements OnInit {
   public message: string = '';
 
   public loginForm = new FormGroup({
-    username: new FormControl(''),
-    password: new FormControl('')
+    username: new FormControl('', Validators.required),
+    password: new FormControl('', Validators.required)
   })
 
   public onSelect () {
@@ -30,6 +31,7 @@ export class LogInComponent implements OnInit {
         if (loginInfo.success){
           this.loginStateService.isLogged = new Observable<boolean>(o => o.next(true));
           this.loginStateService.username = username;
+          this.router.navigate(['/']);
         } else {
           this.loginStateService.isLogged = new Observable<boolean>(o => o.next(false));
         }
@@ -38,7 +40,9 @@ export class LogInComponent implements OnInit {
     )
   }
 
-  constructor(private loginStateService: LoginStateService, private accountService: AccountService) { }
+  constructor(private loginStateService: LoginStateService,
+              private accountService: AccountService,
+              private router: Router) { }
 
   ngOnInit(): void {
   }
