@@ -8,8 +8,9 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { AddAnnouncementComponent } from './components/add-announcement/add-announcement.component';
 import { HttpClientModule } from "@angular/common/http";
 import {ReactiveFormsModule} from "@angular/forms";
-import { LogInComponent } from './components/log-in/log-in.component';
-import { SignInComponent } from './components/sign-in/sign-in.component';
+import {LogInComponent} from "./components/log-in/log-in.component";
+import {SignInComponent} from "./components/sign-in/sign-in.component";
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 
 
 
@@ -21,6 +22,7 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
     AddAnnouncementComponent,
     LogInComponent,
     SignInComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,

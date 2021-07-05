@@ -23,8 +23,8 @@ export class HomeComponent implements OnInit {
         this.announcements = announcements;
       }
     )
-
   }
+
 
   public getAnnouncementsByGameNameAsc(): void  {
     this.announcementsService.getAnnouncementsByGameNameAsc().subscribe(

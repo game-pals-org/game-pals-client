@@ -38,6 +38,8 @@ export class LogInComponent implements OnInit {
     )
   }
 
+
+
   constructor(private loginStateService: LoginStateService, private accountService: AccountService) { }
 
   ngOnInit(): void {

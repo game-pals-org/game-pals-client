@@ -10,6 +10,7 @@ import {AnnouncementService} from "../../service/announcement.service";
 export class AddAnnouncementComponent implements OnInit {
 
   public announcementForm = new FormGroup({
+    user: new FormControl(''),
     gameName: new FormControl(''),
     additionalInfo: new FormControl(''),
     nick: new FormControl(''),
@@ -23,6 +24,7 @@ export class AddAnnouncementComponent implements OnInit {
   }
 
   public onSelect(): void {
+    const user = this.announcementForm.value.user;
     const gameName = this.announcementForm.value.gameName;
     const additionalInfo = this.announcementForm.value.additionalInfo;
     const nick = this.announcementForm.value.nick;
@@ -32,7 +34,7 @@ export class AddAnnouncementComponent implements OnInit {
       isRanked = true;
     }
     this.announcementForm.reset();
-    this.announcementsService.postAnnouncement(gameName, additionalInfo, nick, discordName, isRanked);
+    this.announcementsService.postAnnouncement(user, gameName, additionalInfo, nick, discordName, isRanked);
   }
 
 }
