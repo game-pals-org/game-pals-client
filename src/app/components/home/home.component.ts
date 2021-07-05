@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
   public announcements: Announcement[] = [];
 
   constructor(private announcementsService: AnnouncementService) {
-    announcementsService.getAnnouncements().subscribe(
+    announcementsService.getAnnouncementsByDateDsc().subscribe(
       (announcements: Announcement[]) => {
         this.announcements = announcements;
       }
