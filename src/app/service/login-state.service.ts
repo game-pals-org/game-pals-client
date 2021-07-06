@@ -7,7 +7,7 @@ import {Observable} from "rxjs";
 export class LoginStateService {
 
   private _isLogged: Observable<boolean> = new Observable<boolean>(o => o.next(false));
-  private _username: string = '';
+  private _username: string = 'guest';
 
 
   get isLogged(): Observable<boolean> {
