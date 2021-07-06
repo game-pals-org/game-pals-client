@@ -1,4 +1,4 @@
-label, h1{
+label, h1, h6, h3{
   color: white;
 }
 #profile {
@@ -11,7 +11,7 @@ label, h1{
 }
 #username{
   float: left;
-
+  margin-top: 50px;
 }
 
 #show-announcement{
@@ -19,7 +19,12 @@ label, h1{
 }
 
 #announcement {
-  width: 400px;
   margin: 0 auto;
+}
+
+.card{
+  background: rgba( 255, 255, 255, 0.50 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  border-radius: 10px;
 }
 

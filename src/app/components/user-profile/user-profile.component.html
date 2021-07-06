@@ -1,30 +1,34 @@
 
 
-
-<div id="profile">
-  <div id="logo" >
-      <img src="https://robohash.org/{{this.loginStateService.username}}?set=set4" id="avatar" alt="avatar" width="150"
-           height="150">
-  </div>
+<div class="container">
+  <div id="profile">
+    <div id="logo" >
+        <img src="https://robohash.org/{{this.loginStateService.username}}?set=set4" id="avatar" alt="avatar" width="150"
+             height="150">
+    </div>
     <div id="username">
       <h1>
         {{ this.loginStateService.username }}
       </h1>
     </div>
-</div>
+    <button type="button" class="btn btn-light ms-auto" (click)="logout()">Log out</button>
+  </div>
 
-<div *ngFor="let announcement of announcements" class="mt-2" id="announcement">
-  <div class="card mb-2">
-    <div class="card-body">
-      <h6 class="blockquote-footer card-subtitle display-5">{{ announcement.date.substr(0, 10) }} {{ announcement.date.substr(11, 5) }}</h6>
-      <h5 class="card-title">Game: {{ announcement.gameName }}
-        <span *ngIf="announcement.ranked; else elseBlock" class="badge rounded-pill bg-dark">Ranked</span>
-        <ng-template #elseBlock><span class="badge rounded-pill bg-secondary">Casual</span></ng-template>
-      </h5>
-      <h6 class="card-text mb-2">Info: {{ announcement.additionalInfo }}</h6>
-      <p class="card-subtitle">In game nick: {{ announcement.nick }}</p>
-      <p class="card-subtitle">Discord nick: {{ announcement.discordName }}</p>
-      <button type="button" class="btn btn-danger" (click)="delete(announcement.id)" >Delete</button>
+  <h3>Your announcements:</h3>
+  <div *ngFor="let announcement of announcements" class="mt-2" id="announcement">
+    <div class="card mb-2">
+      <div class="card-body">
+        <h6 class="blockquote-footer card-subtitle display-5">{{ announcement.date.substr(0, 10) }} {{ announcement.date.substr(11, 5) }}</h6>
+        <h5 class="card-title">Game: {{ announcement.gameName }}
+          <span *ngIf="announcement.ranked; else elseBlock" class="badge rounded-pill bg-dark">Ranked</span>
+          <ng-template #elseBlock><span class="badge rounded-pill bg-secondary">Casual</span></ng-template>
+        </h5>
+        <h6 class="card-text mb-2">Info: {{ announcement.additionalInfo }}</h6>
+        <p class="card-subtitle">In game nick: {{ announcement.nick }}</p>
+        <p class="card-subtitle">Discord nick: {{ announcement.discordName }}</p>
+        <button type="button" class="btn btn-danger" (click)="delete(announcement.id)" >Delete</button>
+      </div>
     </div>
   </div>
 </div>
+
