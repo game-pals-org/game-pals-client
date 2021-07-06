@@ -24,6 +24,7 @@
       <h6 class="card-text mb-2">Info: {{ announcement.additionalInfo }}</h6>
       <p class="card-subtitle">In game nick: {{ announcement.nick }}</p>
       <p class="card-subtitle">Discord nick: {{ announcement.discordName }}</p>
+      <button type="button" class="btn btn-danger" (click)="delete(announcement.id)" >Delete</button>
     </div>
   </div>
 </div>
