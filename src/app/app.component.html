@@ -24,7 +24,7 @@
           <a class="nav-link" [routerLink]="['/', 'user-profile']">{{ this.loginStateService.username }}</a>
         </li>
         <li *ngIf="this.loginStateService.isLogged | async" class="nav-item">
-          <a class="nav-brand" [routerLink]="['/']">
+          <a class="nav-brand" [routerLink]="['/', 'user-profile']">
             <img src="https://robohash.org/{{this.loginStateService.username}}?set=set4" id="avatar" alt="avatar" width="40" height="40">
           </a>
         </li>

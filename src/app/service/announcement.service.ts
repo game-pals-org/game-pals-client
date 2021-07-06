@@ -53,4 +53,8 @@ export class AnnouncementService {
   public getAnnouncementsFromUserWithUsername(name: string): Observable<Announcement[]> {
     return this.http.get<Announcement[]>('https://gamepals.herokuapp.com/announcement/byuser/' + name);
   }
+
+  public deleteAnnouncementById(id: number): Observable<Announcement> {
+    return this.http.delete<Announcement>('https://gamepals.herokuapp.com/announcement/' + id);
+  }
 }

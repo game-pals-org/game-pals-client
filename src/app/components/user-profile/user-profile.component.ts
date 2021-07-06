@@ -20,7 +20,9 @@ export class UserProfileComponent implements OnInit {
     )
   }
 
-
+  delete(id: number): void {
+    this.announcementsService.deleteAnnouncementById(id);
+  }
 
 
   ngOnInit(): void {
