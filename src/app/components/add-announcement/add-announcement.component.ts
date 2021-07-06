@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {AnnouncementService} from "../../service/announcement.service";
 import {Router} from "@angular/router";
+import {LoginStateService} from "../../service/login-state.service";
 
 @Component({
   selector: 'app-add-announcement',
@@ -11,7 +12,6 @@ import {Router} from "@angular/router";
 export class AddAnnouncementComponent implements OnInit {
 
   public announcementForm = new FormGroup({
-    user: new FormControl(''),
     gameName: new FormControl('', Validators.required),
     additionalInfo: new FormControl(''),
     nick: new FormControl('', Validators.required),
@@ -20,13 +20,17 @@ export class AddAnnouncementComponent implements OnInit {
   });
 
   constructor(private announcementsService: AnnouncementService,
+              private loginStateService: LoginStateService,
               private router: Router) { }
 
   ngOnInit(): void {
   }
 
   public onSelect(): void {
-    const user = this.announcementForm.value.user;
+    let user = 'guest'
+    if (this.loginStateService.isLogged){
+      user = this.loginStateService.username;
+    }
     const gameName = this.announcementForm.value.gameName;
     const additionalInfo = this.announcementForm.value.additionalInfo;
     const nick = this.announcementForm.value.nick;
