@@ -55,6 +55,9 @@ export class AnnouncementService {
   }
 
   public deleteAnnouncementById(id: number): Observable<Announcement> {
-    return this.http.delete<Announcement>('https://gamepals.herokuapp.com/announcement/' + id);
+    let del =  this.http.delete<Announcement>('https://gamepals.herokuapp.com/announcement/' + id);
+    del.subscribe()
+    console.log(del)
+    return del;
   }
 }
