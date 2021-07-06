@@ -1,4 +1,5 @@
 <div class="container">
+  <h2>You are adding announcement as a {{this.loginStateService.username}}</h2>
   <form [formGroup]="announcementForm" (ngSubmit)="onSelect()" class="position-relative">
     <label for="game-name">Game: </label>
     <input id="game-name" class="form-control mb-1" type="text" placeholder="Game Name" aria-label="default input example" formControlName="gameName">

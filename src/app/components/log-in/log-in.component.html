@@ -1,8 +1,5 @@
-<div class="collapse position-absolute start-50 translate-middle-x" id="collapseInfo">
-  <div class="card card-body">
-    {{message}}
-  </div>
-</div>
+
+<span id="message"><h4>{{message}}</h4></span>
 <div class="container">
   <h1>Log in</h1>
   <form [formGroup]="loginForm" (ngSubmit)="onSelect()" class="position-relative">
@@ -15,8 +12,7 @@
            aria-label=".form-control-sm example" formControlName="password">
 
       <button class="btn btn-success position-absolute start-50 translate-middle-x" id="loginBtn" type="submit"
-              data-bs-toggle="collapse" data-bs-target="#collapseInfo" aria-expanded="false"
-              aria-controls="collapseInfo" [disabled]="!loginForm.valid">Log In
+              aria-expanded="false" [disabled]="!loginForm.valid">Log In
       </button>
   </form>
 </div>

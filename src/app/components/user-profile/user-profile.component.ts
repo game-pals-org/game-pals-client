@@ -27,7 +27,7 @@ export class UserProfileComponent implements OnInit {
 
   logout(): void{
     this.loginStateService.isLogged = new Observable<boolean>(observable => observable.next(false));
-    this.loginStateService.username = ""
+    this.loginStateService.username = "guest"
     this.router.navigate(['/']);
   }
 

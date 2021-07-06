@@ -1,8 +1,4 @@
-<div class="collapse position-absolute start-50 translate-middle-x" id="collapseInfo">
-  <div class="card card-body">
-    {{message}}
-  </div>
-</div>
+<span id="message"><h4>{{message}}</h4></span>
 <div class="container">
   <h1>Sign in</h1>
   <form [formGroup]="signingInForm" (ngSubmit)="onSelect()" class="position-relative">

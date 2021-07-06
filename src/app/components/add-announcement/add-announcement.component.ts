@@ -20,7 +20,7 @@ export class AddAnnouncementComponent implements OnInit {
   });
 
   constructor(private announcementsService: AnnouncementService,
-              private loginStateService: LoginStateService,
+              public loginStateService: LoginStateService,
               private router: Router) { }
 
   ngOnInit(): void {
