@@ -1,6 +1,6 @@
 
 
-<div class="container">
+<div class="container" *ngIf="this.loginStateService.isLogged | async">
   <div id="profile">
     <div id="logo" >
         <img src="https://robohash.org/{{this.loginStateService.username}}?set=set4" id="avatar" alt="avatar" width="150"
@@ -31,4 +31,6 @@
     </div>
   </div>
 </div>
+
+<h1 *ngIf="!(this.loginStateService.isLogged | async)">You are not logged in! Yous shouldn't be here</h1>
 
